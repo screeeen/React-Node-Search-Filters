@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Form, InputGroup, FormControl, Button, Navbar } from 'react-bootstrap'
+import { Form, InputGroup, FormControl } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-class FilterInputField extends Component {
+class FilterLocationField extends Component {
   render() {
     return (
       <div>
@@ -21,12 +21,9 @@ class FilterInputField extends Component {
             </InputGroup.Append>
           </InputGroup>
         </Form>
-        <Form inline>
-          <Button type="submit">Submit</Button>
-        </Form>
       </div>
     )
   }
 }
 
-export default FilterInputField;
+export default FilterLocationField;

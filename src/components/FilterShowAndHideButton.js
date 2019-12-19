@@ -1,25 +1,27 @@
 import React, { Component } from 'react'
 import { Button, Collapse } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 
 class FilterShowAndHideButton extends Component {
   constructor() {
     super();
     this.state = {
-      open: true
+      open: false
     };
   }
 
   handleClick = () => {
-    if (this.state.open === true){
-      this.setState({open: false})
+    if (this.state.open === true) {
+      this.setState({ open: false })
     } else {
-      this.setState({open: true}) 
+      this.setState({ open: true })
     }
   }
 
   render() {
-    const {open} = this.state
+    const { open } = this.state
     return (
       <>
         <Button
@@ -27,14 +29,16 @@ class FilterShowAndHideButton extends Component {
           aria-controls="example-collapse-text"
           aria-expanded={open}
         >
-          <p>click</p>
-      </Button>
+          <p>Filters
+          {this.state.open ? (
+              <FontAwesomeIcon icon={faChevronUp} />
+            ) : (
+                <FontAwesomeIcon icon={faChevronDown} />
+              )}
+          </p>
+        </Button>
         <Collapse in={open}>
-          <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
-        </div>
+        <p>hola</p>
         </Collapse>
       </>
     )
