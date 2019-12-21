@@ -5,39 +5,36 @@ import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 
 class FilterShowAndHideButton extends Component {
-  constructor() {
-    super();
-    this.state = {
-      open: false
-    };
-  }
+
 
   handleClick = () => {
-    if (this.state.open === true) {
-      this.setState({ open: false })
+    const open = this.props.showFilters;
+    console.log('open in d',this.props.showFilters);
+
+    if (open === true) {
+      this.props.displayFilters(false)
     } else {
-      this.setState({ open: true })
+      this.props.displayFilters(true)
     }
   }
 
-  render() {
-    const { open } = this.state
+  render() {    
     return (
       <>
         <Button
           onClick={this.handleClick}
           aria-controls="example-collapse-text"
-          aria-expanded={open}
+          aria-expanded={this.props.showFilters}
         >
           <p>Filters
-          {this.state.open ? (
+          {this.props.showFilters ? (
               <FontAwesomeIcon icon={faChevronUp} />
             ) : (
                 <FontAwesomeIcon icon={faChevronDown} />
               )}
           </p>
         </Button>
-        <Collapse in={open}>
+        <Collapse in={this.props.showFilters}>
         <p>hola</p>
         </Collapse>
       </>

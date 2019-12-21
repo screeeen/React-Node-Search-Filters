@@ -4,20 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 class FilterLocationField extends Component {
-  constructor(props) {
-    super(props);
-    // this.state = {
-    //   location: ""
-    // }
-    // console.log('state location',this.state.location);
-    console.log('props location',this.props);
-  }
 
-  handleFormSubmit = event => {
-    event.preventDefault();
-    // const { location } = this.state;
-    // console.log(this.state,'state');
-  };
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -38,13 +25,6 @@ class FilterLocationField extends Component {
               value={location}
               onChange={this.handleChange}
             />
-
-              {/* <Form.Control
-                type="text"
-                placeholder="Ciudad o Barrio"
-                onChange={this.handleChange}
-              /> */}
-
             <InputGroup.Append>
               <InputGroup.Text id="basic-addon1">
                 <FontAwesomeIcon icon={faSearch} />

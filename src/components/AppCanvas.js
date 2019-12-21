@@ -16,7 +16,7 @@ class AppCanvas extends Component {
       sizeMax: 100000000,
       sizeMin: 0,
       roomsNumber: 100,
-      location: 'ff'
+      location: 'ff',
     }
     console.log('state', this.state);
   }
@@ -24,7 +24,9 @@ class AppCanvas extends Component {
 
   render() {
     const mylocation = this.state.location;
-    console.log('my lo',mylocation)
+    const myshowFilters = this.state.showFilters;
+    console.log('my location', mylocation)
+    console.log('my showfilters', myshowFilters)
     return (
       <>
 
@@ -32,7 +34,9 @@ class AppCanvas extends Component {
           <FilterLocationField
             location={this.state.location}
             setLocation={(location) => this.setState({ location })} />
-          <FilterShowAndHideButton />
+          <FilterShowAndHideButton
+            showFilters={this.state.showFilters}
+            displayFilters={(showFilters) => this.setState({ showFilters })} />
         </Row>
         <Col>
           {/* <PriceInput priceMax={this.state.priceMax} priceMin={this.state.priceMin} setPrice={(priceMax, priceMin) => this.setState({ priceMax, priceMin })} />
