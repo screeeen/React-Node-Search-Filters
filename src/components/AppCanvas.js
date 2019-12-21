@@ -18,17 +18,18 @@ class AppCanvas extends Component {
       roomsNumber: 100,
       location: ''
     }
+    console.log(this.state, 'state');
   }
 
   render() {
     return (
       <>
         <Row>
-            <FilterLocationField />
-            <FilterShowAndHideButton/>
+            <FilterLocationField location={this.state.location} setLocation ={(location) => this.setState({location})}/>
+            <FilterShowAndHideButton />
         </Row>
         <Col>
-          <PriceInput />
+          <PriceInput priceMax={this.state.priceMax} priceMin={this.state.priceMin} setPrice ={(priceMax,priceMin) => this.setState({priceMax,priceMin})}/>
           <SizeInput />
         <Form inline>
           <Button type="submit">Submit</Button>
