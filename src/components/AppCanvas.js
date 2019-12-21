@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Col, Row,Form, Button } from 'react-bootstrap'
+import { Col, Row, Form, Button } from 'react-bootstrap'
 import FilterLocationField from './FilterLocationField'
 import FilterShowAndHideButton from './FilterShowAndHideButton'
 import CardsContainer from './CardsContainer'
@@ -16,24 +16,30 @@ class AppCanvas extends Component {
       sizeMax: 100000000,
       sizeMin: 0,
       roomsNumber: 100,
-      location: ''
+      location: 'ff'
     }
-    console.log(this.state, 'state');
+    console.log('state', this.state);
   }
 
+
   render() {
+    const mylocation = this.state.location;
+    console.log('my lo',mylocation)
     return (
       <>
+
         <Row>
-            <FilterLocationField location={this.state.location} setLocation ={(location) => this.setState({location})}/>
-            <FilterShowAndHideButton />
+          <FilterLocationField
+            location={this.state.location}
+            setLocation={(location) => this.setState({ location })} />
+          <FilterShowAndHideButton />
         </Row>
         <Col>
-          <PriceInput priceMax={this.state.priceMax} priceMin={this.state.priceMin} setPrice ={(priceMax,priceMin) => this.setState({priceMax,priceMin})}/>
-          <SizeInput />
-        <Form inline>
-          <Button type="submit">Submit</Button>
-        </Form>
+          {/* <PriceInput priceMax={this.state.priceMax} priceMin={this.state.priceMin} setPrice={(priceMax, priceMin) => this.setState({ priceMax, priceMin })} />
+          <SizeInput /> */}
+          <Form inline>
+            <Button type="submit">Submit</Button>
+          </Form>
         </Col>
       </>
     )
