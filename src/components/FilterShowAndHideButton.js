@@ -35,7 +35,13 @@ class FilterShowAndHideButton extends Component {
           </p>
         </Button>
         <Collapse in={this.props.showFilters}>
-        <p>hola</p>
+        <>
+        <h2>hola</h2>
+        <h2>hola</h2>
+        <h2>hola</h2>
+        <h2>hola</h2>
+        <h2>hola</h2>
+        </>
         </Collapse>
       </>
     )
