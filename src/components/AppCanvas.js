@@ -23,7 +23,7 @@ class AppCanvas extends Component {
     console.log('state', this.state);
   }
 
-  handleClick = () => {
+  filtersButton = () => {
     if (this.state.showFilters === true) {
       this.setState({ showFilters: false })
     } else {
@@ -33,23 +33,21 @@ class AppCanvas extends Component {
 
 
   render() {
-    const mylocation = this.state.location;
-    const myshowFilters = this.state.showFilters;
-
-    console.log('my location', mylocation)
-    console.log('my showfilters', myshowFilters)
     return (
       <>
         <Row>
           <FilterLocationField
             location={this.state.location}
-            setLocation={(location) => this.setState({ location })} />
+            setLocation={(location) => this.setState({ location }, function () {
+              console.log(this.state.location);
+            })} />
           {/* <FilterShowAndHideButton
             showFilters={this.state.showFilters}
             displayFilters={(showFilters) => this.setState({ showFilters })} /> */}
 
+          {/* TODO: Refactor this button please */}
           <Button
-            onClick={this.handleClick}
+            onClick={this.filtersButton}
             aria-controls="example-collapse-text"
             aria-expanded={this.state.showFilters}
           >
@@ -61,12 +59,20 @@ class AppCanvas extends Component {
                 )}
             </p>
           </Button>
-
         </Row>
+
+        {/* FILTERS */}
         <Collapse in={this.state.showFilters}>
           <div id="example-collapse-text">
-          <PriceInput priceMax={this.state.priceMax} priceMin={this.state.priceMin} setPrice={(priceMax, priceMin) => this.setState({ priceMax, priceMin })} />
-          <SizeInput />
+
+            <PriceInput
+              priceMax={this.state.priceMax}
+              priceMin={this.state.priceMin}
+              setPrice={(price) => this.setState({ price }, function () {
+                console.log(this.state.priceMax,this.state.priceMin);
+              })}
+                          />
+            <SizeInput />
           </div>
         </Collapse>
         <Col>
