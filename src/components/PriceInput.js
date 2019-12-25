@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Form, Col, Row } from 'react-bootstrap'
 
 export default class PriceInput extends Component {
-  
+
   handleChange = event => {
     const { name, value } = event.target;
-    console.log('hola?', { name, value });
-    this.props.setPrice({ [name]: value });
+    console.log('vale', { name, value });
+    name ==='priceMin' ? this.props.setPriceMin(value) : this.props.setPriceMax(value);
   };
 
   render() {
