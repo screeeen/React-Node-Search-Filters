@@ -6,7 +6,8 @@ export default class PriceInput extends Component {
   handleChange = event => {
     const { name, value } = event.target;
     console.log('vale', { name, value });
-    name ==='priceMin' ? this.props.setPriceMin(value) : this.props.setPriceMax(value);
+    const integerVal = parseInt(value);
+    name ==='priceMin' ? this.props.setPriceMin(integerVal) : this.props.setPriceMax(integerVal);
   };
 
   render() {

@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import { Form, Col, Row } from 'react-bootstrap'
 
 class SizeInput extends Component {
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    console.log('vale', { name, value });
+    const integerVal = parseInt(value);
+    name ==='sizeMin' ? this.props.setSizeMin(integerVal) : this.props.setSizeMax(integerVal);
+  };
+
+
   render() {
     return (
       <>
@@ -12,8 +21,8 @@ class SizeInput extends Component {
             </Row>
             <Row>
               <Col>
-                <Form.Group as={Col} controlId="min-size" >
-                  <Form.Control as="select">
+                <Form.Group as={Col} controlId="min-size" onChange={this.handleChange}>
+                  <Form.Control as="select" name="sizeMin">
                     <option>Tamaño Mínimo</option>
                     <option>5m²</option>
                     <option>20m²</option>
@@ -24,8 +33,8 @@ class SizeInput extends Component {
               </Col>
               <p> - </p>
               <Col>
-                <Form.Group as={Col} controlId="max-size" >
-                  <Form.Control as="select">
+                <Form.Group as={Col} controlId="max-size" onChange={this.handleChange}>
+                  <Form.Control as="select" name="sizeMax">
                     <option>Tamaño Máximo</option>
                     <option>5m²</option>
                     <option>20m²</option>

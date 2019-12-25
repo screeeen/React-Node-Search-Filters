@@ -36,48 +36,38 @@ class AppCanvas extends Component {
     return (
       <>
         <Row>
+          {/* LOCATION */}
           <FilterLocationField
             location={this.state.location}
-            setLocation={(location) => this.setState({ location }, function () {
-              console.log(this.state.location);
-            })} />
-          {/* <FilterShowAndHideButton
-            showFilters={this.state.showFilters}
-            displayFilters={(showFilters) => this.setState({ showFilters })} /> */}
+            setLocation={(location) => this.setState({ location })} />
 
-          {/* TODO: Refactor this button please */}
-          <Button
-            onClick={this.filtersButton}
-            aria-controls="example-collapse-text"
-            aria-expanded={this.state.showFilters}
-          >
-            <p>Filters
-          {this.state.showFilters ? (
-                <FontAwesomeIcon icon={faChevronUp} />
-              ) : (
-                  <FontAwesomeIcon icon={faChevronDown} />
-                )}
-            </p>
-          </Button>
+          {/* FILTERS COLLAPSABLE */}
+          <FilterShowAndHideButton
+            showFilters={this.state.showFilters}
+            displayFilters={(showFilters) => this.setState({ showFilters })} />
         </Row>
 
         {/* FILTERS */}
         <Collapse in={this.state.showFilters}>
           <div id="example-collapse-text">
-
             <PriceInput
               priceMax={this.state.priceMax}
               priceMin={this.state.priceMin}
               setPriceMin={(priceMin) => this.setState({ priceMin })}
               setPriceMax={(priceMax) => this.setState({ priceMax })}
-                          />
-            <SizeInput />
+            />
+            <SizeInput
+              sizeMax={this.state.sizeMax}
+              sizeMin={this.state.sizeMin}
+              setSizeMin={(sizeMin) => this.setState({ sizeMin })}
+              setSizeMax={(sizeMax) => this.setState({ sizeMax })}
+            />
           </div>
         </Collapse>
         <Col>
 
 
-          <Form inline>
+          <Form inline >
             <Button type="submit">Submit</Button>
           </Form>
         </Col>

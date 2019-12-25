@@ -8,10 +8,7 @@ class FilterShowAndHideButton extends Component {
 
 
   handleClick = () => {
-    const open = this.props.showFilters;
-    console.log('open in d',this.props.showFilters);
-
-    if (open === true) {
+    if (this.props.showFilters === true) {
       this.props.displayFilters(false)
     } else {
       this.props.displayFilters(true)
@@ -34,15 +31,6 @@ class FilterShowAndHideButton extends Component {
               )}
           </p>
         </Button>
-        <Collapse in={this.props.showFilters}>
-        <>
-        <h2>hola</h2>
-        <h2>hola</h2>
-        <h2>hola</h2>
-        <h2>hola</h2>
-        <h2>hola</h2>
-        </>
-        </Collapse>
       </>
     )
   }
