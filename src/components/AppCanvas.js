@@ -68,8 +68,8 @@ class AppCanvas extends Component {
             <PriceInput
               priceMax={this.state.priceMax}
               priceMin={this.state.priceMin}
-              setPrice={(price) => this.setState({ price }, function () {
-                console.log(this.state.priceMax,this.state.priceMin);
+              setPrice={(priceMin) => this.setState({ priceMin }, function () {
+                console.log(this.state);
               })}
                           />
             <SizeInput />
