@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Col, Row } from 'react-bootstrap'
 
-class SizeInput extends Component {
+class FilterSizeInput extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -51,4 +51,4 @@ class SizeInput extends Component {
   }
 }
 
-export default SizeInput;
+export default FilterSizeInput;

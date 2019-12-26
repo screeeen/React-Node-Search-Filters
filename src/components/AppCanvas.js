@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { Col, Row, Form, Button, Collapse } from 'react-bootstrap'
 import FilterLocationField from './FilterLocationField'
 import FilterShowAndHideButton from './FilterShowAndHideButton'
-import CardsContainer from './CardsContainer'
-import PriceInput from './PriceInput'
-import SizeInput from './SizeInput'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import FilterRoomsNumber from './FilterRoomsNumber'
+// import CardsContainer from './CardsContainer'
+import FilterPriceInput from './FilterPriceInput'
+import FilterSizeInput from './FilterSizeInput'
 
 class AppCanvas extends Component {
   constructor() {
@@ -20,7 +19,6 @@ class AppCanvas extends Component {
       roomsNumber: 100,
       location: '',
     }
-    console.log('state', this.state);
   }
 
   filtersButton = () => {
@@ -29,6 +27,14 @@ class AppCanvas extends Component {
     } else {
       this.setState({ showFilters: true })
     }
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    // calls.handleFormSubmit(this.state)
+    //   .then((newTournament) => {
+    //     this.setState({ name: "", img: "", redirect: true });
+    //   })
   }
 
 
@@ -50,27 +56,31 @@ class AppCanvas extends Component {
         {/* FILTERS */}
         <Collapse in={this.state.showFilters}>
           <div id="example-collapse-text">
-            <PriceInput
+            <FilterPriceInput
               priceMax={this.state.priceMax}
               priceMin={this.state.priceMin}
               setPriceMin={(priceMin) => this.setState({ priceMin })}
               setPriceMax={(priceMax) => this.setState({ priceMax })}
             />
-            <SizeInput
+            <FilterSizeInput
               sizeMax={this.state.sizeMax}
               sizeMin={this.state.sizeMin}
               setSizeMin={(sizeMin) => this.setState({ sizeMin })}
               setSizeMax={(sizeMax) => this.setState({ sizeMax })}
             />
+
+            <FilterRoomsNumber 
+            roomsNumber={this.state.roomsNumber}
+            setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
+
+/>
+            <Col>
+              <Form inline >
+                <Button type="submit">Submit</Button>
+              </Form>
+            </Col>
           </div>
         </Collapse>
-        <Col>
-
-
-          <Form inline >
-            <Button type="submit">Submit</Button>
-          </Form>
-        </Col>
       </>
     )
   }

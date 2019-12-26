@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Col, Row } from 'react-bootstrap'
 
-export default class PriceInput extends Component {
+class FilterPriceInput extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -50,3 +50,4 @@ export default class PriceInput extends Component {
   }
 }
 
+export default FilterPriceInput;
