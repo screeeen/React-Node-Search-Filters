@@ -5,9 +5,8 @@ class FilterRoomsNumber extends Component {
 
   handleChange = event => {
     const { value } = event.target;
-    console.log(value);
-    
-    this.props.setRoomsNumber(value);
+    const integerVal = parseInt(value);
+    this.props.setRoomsNumber(integerVal);
   }
 
   render() {

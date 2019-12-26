@@ -2,28 +2,23 @@
 
 import axios from "axios";
 
-// Fallback solution
-// function getBaseURL(){
-//   return (process.env.NODE_ENV === 'development') ? 'http://localhost:5000' : 'https://quick-compo.herokuapp.com/';
-// }
 
 class Calls {
   constructor() {
     this.calls = axios.create({
-      // baseURL: "http://localhost:5000",
-      baseURL: process.env.REACT_APP_API_URL,
+      baseURL: "http://localhost:5000",
+      // baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
   }
 
-  
-
-//   // players
-//   getPlayersOfTournament(id) {
-//     return this.calls.get(`/api/players/intoTournament/` + id)
-//       .then((data) => data)
-//       .catch((err) => console.log(err))
-//   }
+  // apartments
+  getApartments() {
+    return this.calls.get('/api/apartments')
+      .then((data) => data)
+      .catch((err) => console.log(err))
+  }
+}
 
 //   addPlayer(playerData) {
 //     return this.calls.post("/api/players/add-player", playerData)

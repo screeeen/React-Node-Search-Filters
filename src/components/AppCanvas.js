@@ -6,6 +6,7 @@ import FilterRoomsNumber from './FilterRoomsNumber'
 // import CardsContainer from './CardsContainer'
 import FilterPriceInput from './FilterPriceInput'
 import FilterSizeInput from './FilterSizeInput'
+import calls from '../service/Calls'
 
 class AppCanvas extends Component {
   constructor() {
@@ -31,10 +32,12 @@ class AppCanvas extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // calls.handleFormSubmit(this.state)
-    //   .then((newTournament) => {
-    //     this.setState({ name: "", img: "", redirect: true });
-    //   })
+    calls.getApartments(this.state)
+      .then((apartmentList) => {
+        // this.setState({ name: "", img: "", redirect: true });
+        console.log(apartmentList);
+        
+      })
   }
 
 
@@ -69,13 +72,13 @@ class AppCanvas extends Component {
               setSizeMax={(sizeMax) => this.setState({ sizeMax })}
             />
 
-            <FilterRoomsNumber 
-            roomsNumber={this.state.roomsNumber}
-            setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
+            <FilterRoomsNumber
+              roomsNumber={this.state.roomsNumber}
+              setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
 
-/>
+            />
             <Col>
-              <Form inline >
+              <Form inline onSubmit={this.handleSubmit}>
                 <Button type="submit">Submit</Button>
               </Form>
             </Col>
