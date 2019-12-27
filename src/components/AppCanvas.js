@@ -3,7 +3,7 @@ import { Col, Row, Form, Button, Collapse } from 'react-bootstrap'
 import FilterLocationField from './FilterLocationField'
 import FilterShowAndHideButton from './FilterShowAndHideButton'
 import FilterRoomsNumber from './FilterRoomsNumber'
-// import CardsContainer from './CardsContainer'
+import CardsContainer from './CardsContainer'
 import FilterPriceInput from './FilterPriceInput'
 import FilterSizeInput from './FilterSizeInput'
 import calls from '../service/Calls'
@@ -95,6 +95,7 @@ class AppCanvas extends Component {
             </div>
           </Form>
         </Collapse>
+        <CardsContainer/>
       </>
     )
   }
