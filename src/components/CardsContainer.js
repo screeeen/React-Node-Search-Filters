@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import calls from '../service/Calls'
-import Card from './Card'
+import CardApartment from './CardAppartment'
 
 class CardsContainer extends Component {
   constructor() {
@@ -14,19 +14,21 @@ class CardsContainer extends Component {
     calls.getApartments()
       .then(res => {
         const apartments = res.data;
-        console.log(apartments);
         this.setState({ apartments })
       })
   }
 
   generateApartmentsList = () => {
-    return this.state.apartments.reverse().map((oneApartment, i) => {
-      console.log(this.state.apartments);
-
-      // const { } = oneApartment;
+    return this.state.apartments.slice(0).slice(0).reverse().map((oneApartment, i) => {
+      const { name, price, sqm, numberOfBedrooms, numberOfBathrooms } = oneApartment;
       return (
-        <Card
-        key = {i}
+        <CardApartment
+          key={i}
+          name={name}
+          price={price}
+          sqm={sqm}
+          numberOfBedrooms={numberOfBedrooms}
+          numberOfBathrooms={numberOfBathrooms}
         />
       )
     })
