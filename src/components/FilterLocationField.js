@@ -7,8 +7,7 @@ class FilterLocationField extends Component {
 
 
   handleChange = event => {
-    const { name, value } = event.target;
-    console.log('name',name);
+    const { value } = event.target;
     this.props.setLocation(value);
   };
 

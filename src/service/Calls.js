@@ -13,12 +13,22 @@ class Calls {
   }
 
   // apartments
-  getApartments() {
-    return this.calls.get('/api/apartments')
-      .then((data) => data)
-      .catch((err) => console.log(err))
+  async search(query) {
+    const { location,priceMax,priceMin,sizeMax,sizeMin,roomsNumber } = query;    
+    const { data } = await this.calls
+    .get(`/api/search?location=${location}&priceMin=${priceMin}&priceMax=${priceMax}&sizeMin=${sizeMin}&sizeMax=${sizeMax}&roomsNumber=${roomsNumber}`)
+    return data;
   }
 }
+
+
+
+// getApartments() {
+//   return this.calls.get('/api/apartments')
+//     .then((data) => data)
+//     .catch((err) => console.log(err))
+// }
+// }
 
 //   addPlayer(playerData) {
 //     return this.calls.post("/api/players/add-player", playerData)

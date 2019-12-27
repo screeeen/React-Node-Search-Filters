@@ -19,6 +19,7 @@ class AppCanvas extends Component {
       sizeMin: 0,
       roomsNumber: 100,
       location: '',
+      apartmentsResult: []
     }
   }
 
@@ -32,11 +33,20 @@ class AppCanvas extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    calls.getApartments(this.state)
+
+    const query = {
+      location: this.state.location,
+      priceMax: this.state.priceMax,
+      priceMin: this.state.priceMin,
+      sizeMax: this.state.sizeMax,
+      sizeMin: this.state.sizeMin,
+      roomsNumber: this.state.roomsNumber
+    }
+
+    calls.search(query)
       .then((apartmentList) => {
-        // this.setState({ name: "", img: "", redirect: true });
-        console.log(apartmentList);
-        
+        console.log('data pack', apartmentList);
+        // this.setState(apartmentsResult:apartmentList);        
       })
   }
 
@@ -58,31 +68,32 @@ class AppCanvas extends Component {
 
         {/* FILTERS */}
         <Collapse in={this.state.showFilters}>
-          <div id="example-collapse-text">
-            <FilterPriceInput
-              priceMax={this.state.priceMax}
-              priceMin={this.state.priceMin}
-              setPriceMin={(priceMin) => this.setState({ priceMin })}
-              setPriceMax={(priceMax) => this.setState({ priceMax })}
-            />
-            <FilterSizeInput
-              sizeMax={this.state.sizeMax}
-              sizeMin={this.state.sizeMin}
-              setSizeMin={(sizeMin) => this.setState({ sizeMin })}
-              setSizeMax={(sizeMax) => this.setState({ sizeMax })}
-            />
+          <Form inline onSubmit={this.handleSubmit}>
 
-            <FilterRoomsNumber
-              roomsNumber={this.state.roomsNumber}
-              setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
+            <div id="example-collapse-text">
+              <FilterPriceInput
+                priceMax={this.state.priceMax}
+                priceMin={this.state.priceMin}
+                setPriceMin={(priceMin) => this.setState({ priceMin })}
+                setPriceMax={(priceMax) => this.setState({ priceMax })}
+              />
+              <FilterSizeInput
+                sizeMax={this.state.sizeMax}
+                sizeMin={this.state.sizeMin}
+                setSizeMin={(sizeMin) => this.setState({ sizeMin })}
+                setSizeMax={(sizeMax) => this.setState({ sizeMax })}
+              />
 
-            />
-            <Col>
-              <Form inline onSubmit={this.handleSubmit}>
+              <FilterRoomsNumber
+                roomsNumber={this.state.roomsNumber}
+                setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
+
+              />
+              <Col>
                 <Button type="submit">Submit</Button>
-              </Form>
-            </Col>
-          </div>
+              </Col>
+            </div>
+          </Form>
         </Collapse>
       </>
     )

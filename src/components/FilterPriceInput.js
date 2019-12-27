@@ -5,7 +5,6 @@ class FilterPriceInput extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    console.log('vale', { name, value });
     const integerVal = parseInt(value);
     name ==='priceMin' ? this.props.setPriceMin(integerVal) : this.props.setPriceMax(integerVal);
   };
