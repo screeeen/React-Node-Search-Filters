@@ -5,7 +5,6 @@ class FilterSizeInput extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    console.log('vale', { name, value });
     const integerVal = parseInt(value);
     name ==='sizeMin' ? this.props.setSizeMin(integerVal) : this.props.setSizeMax(integerVal);
   };

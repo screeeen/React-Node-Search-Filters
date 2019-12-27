@@ -5,8 +5,19 @@ class FilterPriceInput extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    const integerVal = parseInt(value);
-    name ==='priceMin' ? this.props.setPriceMin(integerVal) : this.props.setPriceMax(integerVal);
+    const integerVal = this.formatPrice(parseInt(value));
+
+    name === 'priceMin' ? this.props.setPriceMin(integerVal) : this.props.setPriceMax(integerVal);
+  };
+
+  formatPrice(tens){
+    const amount = {
+      25 : () => 25000,
+      50 : () => 50000,
+      75 : () => 75000,
+      100 : () => 100000
+    }
+    return (amount[tens])();
   };
 
   render() {
@@ -20,7 +31,7 @@ class FilterPriceInput extends Component {
             <Row>
               <Col>
                 <Form.Group as={Col} controlId="min-price" onChange={this.handleChange}>
-                  <Form.Control as="select" name ="priceMin">
+                  <Form.Control as="select" name="priceMin">
                     <option>precio mínimo</option>
                     <option>25.000€</option>
                     <option>50.000€</option>
@@ -32,7 +43,7 @@ class FilterPriceInput extends Component {
               <p> - </p>
               <Col>
                 <Form.Group as={Col} controlId="max-price" onChange={this.handleChange}>
-                  <Form.Control as="select" name ="priceMax">
+                  <Form.Control as="select" name="priceMax">
                     <option>precio máximo</option>
                     <option>25.000€</option>
                     <option>50.000€</option>
