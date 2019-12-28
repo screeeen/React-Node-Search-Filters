@@ -28,18 +28,11 @@ class FilterLocationField extends Component {
       document.getElementById('autocomplete'),
       options);
 
-    console.log('autoco', document.getElementById('autocomplete'));
-
     autocomplete.setFields(['address_components', 'formatted_address']);
-    console.log('autt', autocomplete);
-
-    // Fire Event when a suggested name is selected
     autocomplete.addListener('place_changed', () => {
-      console.log('auttttttt', autocomplete);
 
       const addressObject = autocomplete.getPlace();
       const address = addressObject.address_components;
-      console.log('address', addressObject, address);
       if (address) {
         this.setState(
           {
@@ -49,19 +42,15 @@ class FilterLocationField extends Component {
         );
       }
     });
-
-  }
-
-  handlePlaceSelect = () => {
-
   }
 
   render() {
+     const urlPlaces = `https://maps.googleapis.com/maps/api/js?key=${process.env.PLACES_KEY}&libraries=places`;
 
     return (
       <>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOCkiowTfg9deedNg34EWelp3thqbYYN8&libraries=places"
+          url={urlPlaces}
           onLoad={this.handleScriptLoad}
         />
         <Form inline onSubmit={this.handleFormSubmit}>
