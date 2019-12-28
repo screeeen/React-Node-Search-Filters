@@ -27,7 +27,7 @@ class AppCanvas extends Component {
     calls.getApartments()
       .then(res => {
         const apartmentList = res.data;
-        this.setState({ apartmentsResult:apartmentList })
+        this.setState({ apartmentsResult: apartmentList })
       })
   }
 
@@ -41,7 +41,6 @@ class AppCanvas extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
     const query = {
       location: this.state.location,
       priceMax: this.state.priceMax,
@@ -60,6 +59,8 @@ class AppCanvas extends Component {
 
 
   render() {
+    // const urlPlaces = `https://maps.googleapis.com/maps/api/js?key=${process.env.PLACES_KEY}&libraries=places`;
+    // console.log('url', urlPlaces);
     return (
       <>
         <Row>
@@ -103,8 +104,7 @@ class AppCanvas extends Component {
             </div>
           </Form>
         </Collapse>
-        <CardsContainer apartmentsToDisplay={this.state.apartmentsResult} /> 
-
+        <CardsContainer apartmentsToDisplay={this.state.apartmentsResult} />
       </>
     )
   }
