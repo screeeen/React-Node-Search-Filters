@@ -23,6 +23,14 @@ class AppCanvas extends Component {
     }
   }
 
+  componentDidMount() {
+    calls.getApartments()
+      .then(res => {
+        const apartmentList = res.data;
+        this.setState({ apartmentsResult:apartmentList })
+      })
+  }
+
   filtersButton = () => {
     if (this.state.showFilters === true) {
       this.setState({ showFilters: false })
@@ -46,7 +54,7 @@ class AppCanvas extends Component {
     calls.search(query)
       .then((apartmentList) => {
         console.log('data pack', apartmentList);
-        // this.setState(apartmentsResult:apartmentList);        
+        this.setState({ apartmentsResult: apartmentList });
       })
   }
 
@@ -95,7 +103,8 @@ class AppCanvas extends Component {
             </div>
           </Form>
         </Collapse>
-        <CardsContainer/>
+        <CardsContainer apartmentsToDisplay={this.state.apartmentsResult} /> 
+
       </>
     )
   }
