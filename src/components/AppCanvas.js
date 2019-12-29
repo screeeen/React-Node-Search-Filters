@@ -18,7 +18,7 @@ class AppCanvas extends Component {
       priceMin: 0,
       sizeMax: 100000000,
       sizeMin: 0,
-      roomsNumber: 100,
+      roomsNumber: 0,
       location: '',
       apartmentsResult: []
     }
@@ -63,7 +63,6 @@ class AppCanvas extends Component {
     // const urlPlaces = `https://maps.googleapis.com/maps/api/js?key=${process.env.PLACES_KEY}&libraries=places`;
     // console.log('url', urlPlaces);
     return (
-const style = { background-color: #722aa0}
 
       <>
   <Row >

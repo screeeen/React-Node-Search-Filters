@@ -16,30 +16,37 @@ class FilterLocationField extends Component {
 
   handleChange = event => {
     const { value } = event.target;
+    // this.props.setLocation(value);
     this.setState({ location: value })
-    this.props.setLocation(value);
   };
 
+  liftLocationState =() => {
+    this.props.setLocation(this.state.location);
+  }
+
+  
+  
   handleScriptLoad = () => {
     const options = { types: ['(cities)'] };
-
+    
     /*global google*/
     const autocomplete = new google.maps.places.Autocomplete(
       document.getElementById('autocomplete'),
       options);
-
-    autocomplete.setFields(['address_components', 'formatted_address']);
-    autocomplete.addListener('place_changed', () => {
-
-      const addressObject = autocomplete.getPlace();
-      const address = addressObject.address_components;
-      if (address) {
-        this.setState(
-          {
-            location: address[0].long_name,
-            query: addressObject.formatted_address,
+      
+      autocomplete.setFields(['address_components', 'formatted_address']);
+      autocomplete.addListener('place_changed', () => {
+        
+        const addressObject = autocomplete.getPlace();
+        const address = addressObject.address_components;
+        if (address) {
+          this.setState(
+            {
+              location: address[0].long_name,
+              query: addressObject.formatted_address,              
           }
-        );
+          );
+          this.liftLocationState();
       }
     });
   }
