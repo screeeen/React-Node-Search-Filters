@@ -63,56 +63,58 @@ class AppCanvas extends Component {
     // const urlPlaces = `https://maps.googleapis.com/maps/api/js?key=${process.env.PLACES_KEY}&libraries=places`;
     // console.log('url', urlPlaces);
     return (
+const style = { background-color: #722aa0}
+
       <>
-        <Row className="btn-info">
-          {/* LOCATION */}
-          <Col className="col-9">
-            <FilterLocationField
-              location={this.state.location}
-              setLocation={(location) => this.setState({ location })} />
-          </Col>
+  <Row >
+    {/* LOCATION */}
+    <Col className="col-9">
+      <FilterLocationField
+        location={this.state.location}
+        setLocation={(location) => this.setState({ location })} />
+    </Col>
 
-          {/* FILTERS COLLAPSABLE */}
-          <Col className="col-3">
+    {/* FILTERS COLLAPSABLE */}
+    <Col className="col-3">
 
-            <FilterShowAndHideButton
-              showFilters={this.state.showFilters}
-              displayFilters={(showFilters) => this.setState({ showFilters })} />
-          </Col>
+      <FilterShowAndHideButton
+        showFilters={this.state.showFilters}
+        displayFilters={(showFilters) => this.setState({ showFilters })} />
+    </Col>
 
-        </Row>
+  </Row>
 
-        {/* FILTERS */}
-        <Collapse in={this.state.showFilters}>
-          <Form inline onSubmit={this.handleSubmit}>
+  {/* FILTERS */}
+  <Collapse in={this.state.showFilters}>
+    <Form inline onSubmit={this.handleSubmit}>
 
-            <div id="example-collapse-text">
-              <FilterPriceInput
-                priceMax={this.state.priceMax}
-                priceMin={this.state.priceMin}
-                setPriceMin={(priceMin) => this.setState({ priceMin })}
-                setPriceMax={(priceMax) => this.setState({ priceMax })}
-              />
-              <FilterSizeInput
-                sizeMax={this.state.sizeMax}
-                sizeMin={this.state.sizeMin}
-                setSizeMin={(sizeMin) => this.setState({ sizeMin })}
-                setSizeMax={(sizeMax) => this.setState({ sizeMax })}
-              />
+      <div id="example-collapse-text">
+        <FilterPriceInput
+          priceMax={this.state.priceMax}
+          priceMin={this.state.priceMin}
+          setPriceMin={(priceMin) => this.setState({ priceMin })}
+          setPriceMax={(priceMax) => this.setState({ priceMax })}
+        />
+        <FilterSizeInput
+          sizeMax={this.state.sizeMax}
+          sizeMin={this.state.sizeMin}
+          setSizeMin={(sizeMin) => this.setState({ sizeMin })}
+          setSizeMax={(sizeMax) => this.setState({ sizeMax })}
+        />
 
-              <FilterRoomsNumber
-                roomsNumber={this.state.roomsNumber}
-                setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
+        <FilterRoomsNumber
+          roomsNumber={this.state.roomsNumber}
+          setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
 
-              />
-              <Col>
-                <Button type="submit">Submit</Button>
-              </Col>
-            </div>
-          </Form>
-        </Collapse>
-        <CardsContainer apartmentsToDisplay={this.state.apartmentsResult} />
-      </>
+        />
+        <Col>
+          <Button type="submit">Submit</Button>
+        </Col>
+      </div>
+    </Form>
+  </Collapse>
+  <CardsContainer apartmentsToDisplay={this.state.apartmentsResult} />
+</>
     )
   }
 }
