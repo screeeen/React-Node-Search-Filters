@@ -13,8 +13,8 @@ class FilterRoomsNumber extends Component {
     return (
       <>
         <ButtonToolbar onChange={this.handleChange}>
-          <ToggleButtonGroup type="radio" defaultValue={1} name="options">
-            <ToggleButton value={100}>Todos </ToggleButton>
+          <ToggleButtonGroup type="radio" defaultValue={100} name="options">
+            <ToggleButton value={100}>Todos</ToggleButton>
             <ToggleButton value={1}>1+</ToggleButton>
             <ToggleButton value={2}>2+</ToggleButton>
             <ToggleButton value={3}>3+</ToggleButton>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap';
+import { Button,Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
@@ -17,7 +17,7 @@ class FilterShowAndHideButton extends Component {
 
   render() {    
     return (
-      <>
+      <Row>
         <Button
           onClick={this.handleClick}
           aria-controls="example-collapse-text"
@@ -31,7 +31,7 @@ class FilterShowAndHideButton extends Component {
               )}
           </p>
         </Button>
-      </>
+      </Row>
     )
   }
 }

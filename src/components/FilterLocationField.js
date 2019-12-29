@@ -45,15 +45,15 @@ class FilterLocationField extends Component {
   }
 
   render() {
-     const urlPlaces = `https://maps.googleapis.com/maps/api/js?key=${process.env.PLACES_KEY}&libraries=places`;
-
+    const key = process.env.REACT_APP_PLACES_KEY;
+    const urlPlaces = `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places`;
     return (
       <>
         <Script
           url={urlPlaces}
           onLoad={this.handleScriptLoad}
         />
-        <Form inline onSubmit={this.handleFormSubmit}>
+        <Form onSubmit={this.handleFormSubmit}>
           <InputGroup>
             <FormControl
               id="autocomplete"

@@ -7,6 +7,7 @@ import CardsContainer from './CardsContainer'
 import FilterPriceInput from './FilterPriceInput'
 import FilterSizeInput from './FilterSizeInput'
 import calls from '../service/Calls'
+import '../style/Style.css'
 
 class AppCanvas extends Component {
   constructor() {
@@ -63,16 +64,22 @@ class AppCanvas extends Component {
     // console.log('url', urlPlaces);
     return (
       <>
-        <Row>
+        <Row className="btn-info">
           {/* LOCATION */}
-          <FilterLocationField
-            location={this.state.location}
-            setLocation={(location) => this.setState({ location })} />
+          <Col className="col-9">
+            <FilterLocationField
+              location={this.state.location}
+              setLocation={(location) => this.setState({ location })} />
+          </Col>
 
           {/* FILTERS COLLAPSABLE */}
-          <FilterShowAndHideButton
-            showFilters={this.state.showFilters}
-            displayFilters={(showFilters) => this.setState({ showFilters })} />
+          <Col className="col-3">
+
+            <FilterShowAndHideButton
+              showFilters={this.state.showFilters}
+              displayFilters={(showFilters) => this.setState({ showFilters })} />
+          </Col>
+
         </Row>
 
         {/* FILTERS */}
