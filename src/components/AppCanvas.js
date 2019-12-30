@@ -7,7 +7,7 @@ import CardsContainer from './CardsContainer'
 import FilterPriceInput from './FilterPriceInput'
 import FilterSizeInput from './FilterSizeInput'
 import calls from '../service/Calls'
-import '../style/Style.css'
+import '../style/Styles.css'
 
 class AppCanvas extends Component {
   constructor() {
@@ -60,60 +60,56 @@ class AppCanvas extends Component {
 
 
   render() {
-    // const urlPlaces = `https://maps.googleapis.com/maps/api/js?key=${process.env.PLACES_KEY}&libraries=places`;
-    // console.log('url', urlPlaces);
     return (
-
       <>
-  <Row >
-    {/* LOCATION */}
-    <Col className="col-9">
-      <FilterLocationField
-        location={this.state.location}
-        setLocation={(location) => this.setState({ location })} />
-    </Col>
+        <div className="search_filters_container">
+          <Row className="pt-2 pb-2 pl-3">
+            {/* LOCATION */}
+            <Col className="search_filter_col col-9">
+              <FilterLocationField
+                location={this.state.location}
+                setLocation={(location) => this.setState({ location })} />
+            </Col>
+            {/* FILTERS COLLAPSABLE */}
+            <Col className="col-2">
+              <FilterShowAndHideButton
+                showFilters={this.state.showFilters}
+                displayFilters={(showFilters) => this.setState({ showFilters })} />
+            </Col>
 
-    {/* FILTERS COLLAPSABLE */}
-    <Col className="col-3">
+          </Row>
+        </div>
+        {/* FILTERS */}
+        <Collapse in={this.state.showFilters}>
+          <Form onSubmit={this.handleSubmit}>
 
-      <FilterShowAndHideButton
-        showFilters={this.state.showFilters}
-        displayFilters={(showFilters) => this.setState({ showFilters })} />
-    </Col>
+            <div id="example-collapse-text">
+              <FilterPriceInput
+                priceMax={this.state.priceMax}
+                priceMin={this.state.priceMin}
+                setPriceMin={(priceMin) => this.setState({ priceMin })}
+                setPriceMax={(priceMax) => this.setState({ priceMax })}
+              />
+              <FilterSizeInput
+                sizeMax={this.state.sizeMax}
+                sizeMin={this.state.sizeMin}
+                setSizeMin={(sizeMin) => this.setState({ sizeMin })}
+                setSizeMax={(sizeMax) => this.setState({ sizeMax })}
+              />
 
-  </Row>
+              <FilterRoomsNumber
+                roomsNumber={this.state.roomsNumber}
+                setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
 
-  {/* FILTERS */}
-  <Collapse in={this.state.showFilters}>
-    <Form inline onSubmit={this.handleSubmit}>
-
-      <div id="example-collapse-text">
-        <FilterPriceInput
-          priceMax={this.state.priceMax}
-          priceMin={this.state.priceMin}
-          setPriceMin={(priceMin) => this.setState({ priceMin })}
-          setPriceMax={(priceMax) => this.setState({ priceMax })}
-        />
-        <FilterSizeInput
-          sizeMax={this.state.sizeMax}
-          sizeMin={this.state.sizeMin}
-          setSizeMin={(sizeMin) => this.setState({ sizeMin })}
-          setSizeMax={(sizeMax) => this.setState({ sizeMax })}
-        />
-
-        <FilterRoomsNumber
-          roomsNumber={this.state.roomsNumber}
-          setRoomsNumber={(roomsNumber) => this.setState({ roomsNumber })}
-
-        />
-        <Col>
-          <Button type="submit">Submit</Button>
-        </Col>
-      </div>
-    </Form>
-  </Collapse>
-  <CardsContainer apartmentsToDisplay={this.state.apartmentsResult} />
-</>
+              />
+              <Row className=" p-4">
+                <Button size="sm" className="btn_submit m-auto" type="submit">Ver Inmuebles</Button>
+              </Row>
+            </div>
+          </Form>
+        </Collapse>
+        <CardsContainer apartmentsToDisplay={this.state.apartmentsResult} />
+      </>
     )
   }
 }

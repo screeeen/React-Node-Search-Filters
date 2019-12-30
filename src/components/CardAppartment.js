@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import '../style/Style.css'
+// import '../style/Style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faBed, faBath } from '@fortawesome/free-solid-svg-icons'
 
@@ -11,7 +11,7 @@ class CardApartment extends Component {
     return (
       <div className="listing_card_col">
         <div className="listing_card card">
-          <img className="llisting_card_image_container" src={picURL} alt="apartment pic" />
+          <img className="listing_card_image_container" src={picURL} alt="apartment pic" />
           <div className="listing_card_location_names_and_prices">
             <div className="listing_card_location_names">{this.props.location}</div>
             <div className="listing_card_location_price" >{this.props.price}€</div>

@@ -16,7 +16,7 @@ class FilterSizeInput extends Component {
         <Row>
           <Col>
             <Row>
-              <h6>TAMAÑO</h6>
+              <h6 className="m-auto p-2">TAMAÑO</h6>
             </Row>
             <Row>
               <Col>

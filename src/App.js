@@ -2,14 +2,14 @@ import React from 'react';
 import Header from './components/Header'
 import AppCanvas from './components/AppCanvas'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './style/Style.css'
+import { Container } from 'react-bootstrap'
 
 function App() {
   return (
-    <div>
+    <Container className="m-0 p-0">
       <Header />
       <AppCanvas />
-    </div>
+    </Container>
   );
 }
 

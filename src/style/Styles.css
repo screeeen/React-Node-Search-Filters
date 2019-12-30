@@ -1,0 +1,413 @@
+.search_filters_container > .row {
+  background: #722aa0;
+}
+
+.btn_custom {
+  background: transparent !important;
+  border: 0 !important;
+  outline: none !important;
+  color: white;
+  font-weight: bold;
+  padding: 6px 0 !important;
+  box-shadow: 0 0 0 0;
+}
+
+.btn_toggle{
+  background: transparent !important;
+}
+
+.btn_toggle:active{
+  background: #1cc168 !important;
+  color:white;
+}
+
+
+.green {
+  background: #1cc168;
+
+}
+
+.blue {
+  background: #722aa0;
+}
+
+.btn_submit{
+width: 80%;
+background-color: #722aa0 !important;
+border: 0 !important;
+} 
+
+.green-bg{
+  background-color: #1cc168 !important;
+}
+
+.search_filter_icon {
+  color: #1cc168 !important;
+}
+
+.search_filter_col {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.search_filter_col:first-child {
+  padding-left: 15px;
+}
+
+.listing_card,
+.listing_card_compact {
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid #e3e3e3;
+  color: black;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+.listing_card.hover,
+.listing_card:hover,
+.listing_card_compact.hover,
+.listing_card_compact:hover {
+  color: black;
+  text-decoration: none;
+  box-shadow: 0 0 0 0.3rem rgba(28, 193, 104, 0.25);
+}
+.listing_card {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.listing_card .slick-arrow {
+  top: 44.5%;
+  opacity: 0.75;
+}
+.listing_card .slick-arrow.slick-placeholder-button {
+  top: 45.3%;
+}
+.listing_card .slick-arrow:after {
+  font-size: 20px;
+}
+.listing_card .slick-prev {
+  cursor: w-resize;
+}
+.listing_card .slick-next {
+  cursor: e-resize;
+}
+.listing_card_image_container {
+  height: 285px;
+  position: relative;
+}
+.listing_card_images {
+  overflow: hidden;
+  position: relative;
+}
+.listing_card_image {
+  height: 285px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+.listing_card_tags {
+  position: absolute;
+  top: 0;
+}
+.listing_card_bottom_tags {
+  bottom: 72px;
+  position: absolute;
+}
+.listing_card_tag {
+  background-color: white;
+  color: #333;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 6px 22px;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.listing_card_tag.recent {
+  background-color: rgba(120, 191, 238, 0.75);
+  color: white;
+}
+.listing_card_tag.exclusive {
+  background-color: rgba(114, 42, 160, 0.75);
+  color: white;
+}
+.listing_card_tag.new_condition {
+  background-color: rgba(114, 42, 160, 0.75);
+  color: white;
+}
+.listing_card_tag.super_featured {
+  background-color: #ef6d6d;
+  color: white;
+}
+.listing_card_tag.featured {
+  background-color: rgba(28, 193, 104, 0.75);
+  color: white;
+}
+.listing_card_tag.reference {
+  background-color: #722aa0;
+  color: white;
+}
+.listing_card_image_hidden {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.66);
+  display: flex;
+  flex-direction: column;
+  height: 203px;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.listing_card_image_hidden_text {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+.listing_card_location_names_and_prices,
+.listing_card_map {
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.listing_card_location_names_and_prices {
+  background-color: rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  padding: 5px 5px 5px 12px;
+  height: 72px;
+  width: calc(100% - 88px);
+}
+@media (min-width: 375px) {
+  .listing_card_location_names_and_prices {
+    padding: 9px 5px 15px 12px;
+  }
+}
+.listing_card_location_names {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+.listing_card_map {
+  right: 0;
+  background: #e8e8e8;
+  height: 72px;
+  width: 88px;
+}
+.listing_card_title_and_agency {
+  height: 62px;
+  padding: 12px 12px 8px;
+  display: flex;
+}
+.listing_card_title {
+  color: #334c97;
+  font-weight: 500;
+  flex: 0 0 67%;
+  width: 67%;
+  white-space: normal;
+  overflow: hidden;
+}
+.listing_card_title.listing_card_title_full_width {
+  flex: 0 0 100%;
+  width: 100%;
+}
+.listing_card_agency {
+  flex: 0 0 33%;
+  height: 38px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  overflow: hidden;
+  padding-left: 5px;
+  width: 33%;
+}
+.listing_card_details {
+  border-top: 1px solid #e3e3e3;
+  color: #474747;
+  display: flex;
+  font-weight: 400;
+  justify-content: space-between;
+  padding: 13px 12px;
+}
+.listing_card_details .vr {
+  border-left: 1px solid #666;
+}
+.listing_card_price {
+  display: flex;
+  font-weight: bold;
+  line-height: 34px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.listing_card_price .fa-caret-down {
+  color: #1cc168;
+  font-size: 24px;
+  margin-top: 5px;
+  margin-right: 3px;
+}
+.listing_card_price_per_square_meter {
+  font-size: 11px;
+  line-height: 11px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+}
+.listing_card_location_names {
+  padding-bottom: 0;
+}
+.listing_card_prices {
+  display: block;
+}
+.listing_card_prices .listing_card_price {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.listing_card_prices .listing_card_price_per_square_meter {
+  margin-top: 0;
+}
+.listing_card_price_separator {
+  display: none;
+}
+.listing_card_title {
+  font-size: 17px;
+  line-height: 20px;
+}
+.listing_card_details {
+  font-size: 14px;
+}
+@media (min-width: 375px) {
+  .listing_card_prices {
+    display: flex;
+    flex-direction: row;
+    line-height: 28px;
+  }
+  .listing_card_prices .listing_card_price {
+    line-height: initial;
+    font-size: 27px;
+  }
+  .listing_card_prices .listing_card_price_per_square_meter {
+    margin-top: 13px;
+  }
+  .listing_card_price_separator {
+    display: block;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 5px;
+  }
+  .listing_card_title {
+    font-size: 19px;
+  }
+  .listing_card_details {
+    padding: 13px 18px;
+  }
+  .listing_card_location_names {
+    padding-bottom: 3px;
+  }
+}
+.my_profile .listing_card_location_names {
+  padding-bottom: 0;
+}
+.my_profile .listing_card_prices {
+  display: block;
+}
+.my_profile .listing_card_prices .listing_card_price {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+.my_profile .listing_card_prices .listing_card_price_per_square_meter {
+  margin-top: 0;
+}
+.my_profile .listing_card_price_separator {
+  display: none;
+}
+.my_profile .listing_card_title {
+  font-size: 17px;
+  line-height: 20px;
+}
+.my_profile .listing_card_details {
+  font-size: 14px;
+}
+.listing_card_compact {
+  border: 0;
+  flex-direction: row;
+  padding-right: 5px;
+  margin: 5px 0;
+}
+.listing_card_compact .listing_card_price_per_square_meter {
+  display: none;
+}
+.listing_card_compact .listing_card_images {
+  overflow: initial;
+}
+.listing_card_compact .listing_card_image {
+  height: 100px;
+  padding-right: 5px;
+  width: 100px;
+}
+.listing_card_compact .slick-arrow {
+  display: none;
+}
+.listing_card_compact .listing_card_tag {
+  color: white;
+  font-weight: 100;
+  font-size: 9px;
+  line-height: 9px;
+  padding: 4px;
+}
+.listing_card_compact .listing_card_info {
+  width: 150px;
+}
+.listing_card_compact .listing_card_title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 15.5px;
+  width: 100%;
+  flex: initial;
+}
+.listing_card_compact .listing_card_details {
+  border: 0;
+  color: #808080;
+  font-size: 11px;
+  font-weight: normal;
+  padding: 0;
+}
+.listing_card_compact .listing_card_details .fa {
+  display: none;
+}
+.listing_card_compact .listing_card_price {
+  font-size: 21px;
+  font-weight: bolder;
+  line-height: 24px;
+}
+.listing_card_compact_col:first-child {
+  margin-left: 5px;
+}
+.listing_card_compact_col + .listing_card_compact_col {
+  margin-left: 10px;
+}
+.listing_card_super_featured {
+  background-color: #ef6d6d;
+}
+.listing_card_super_featured .listing_card_details,
+.listing_card_super_featured .listing_card_details .vr,
+.listing_card_super_featured .listing_card_title {
+  color: white;
+}
+.listing_card_super_featured .listing_card_details {
+  border-top-color: white;
+}
+.listing_card_super_featured.listing_card_compact .listing_card_price {
+  color: white;
+}
+.listing_card_super_featured.hover,
+.listing_card_super_featured:hover {
+  text-decoration: none;
+  box-shadow: 0 0 0 0.3rem rgba(114, 42, 160, 0.25);
+}

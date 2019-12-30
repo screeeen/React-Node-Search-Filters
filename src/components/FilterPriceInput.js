@@ -26,7 +26,7 @@ class FilterPriceInput extends Component {
         <Row>
           <Col>
             <Row>
-              <h6>PRECIO</h6>
+              <h6 className="m-auto p-2">PRECIO</h6>
             </Row>
             <Row>
               <Col>
