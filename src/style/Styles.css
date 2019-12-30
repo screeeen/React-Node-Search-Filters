@@ -152,19 +152,13 @@ border: 0 !important;
   position: absolute;
   width: 100%;
   z-index: 1;
-  padding-left: 10px;
 }
 .listing_card_location_names_and_prices {
   background-color: rgba(255, 255, 255, 0.6);
   display: inline-block;
   padding: 5px 5px 5px 12px;
   height: 72px;
-  width: calc(100% - 88px);
-}
-@media (min-width: 375px) {
-  .listing_card_location_names_and_prices {
-    padding: 9px 5px 15px 12px;
-  }
+  /* width: calc(100% - 88px); */
 }
 .listing_card_location_names {
   font-size: 10px;
@@ -215,7 +209,7 @@ border: 0 !important;
   justify-content: space-between;
   padding: 13px 12px;
 }
-.listing_card_details .vr {
+.listing_card_details {
   border-left: 1px solid #666;
 }
 .listing_card_price {
@@ -226,8 +220,7 @@ border: 0 !important;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.listing_card_price .fa-caret-down {
-  color: #1cc168;
+.listing_card_price {
   font-size: 24px;
   margin-top: 5px;
   margin-right: 3px;
@@ -253,9 +246,7 @@ border: 0 !important;
 .listing_card_prices .listing_card_price_per_square_meter {
   margin-top: 0;
 }
-.listing_card_price_separator {
-  display: none;
-}
+
 .listing_card_title {
   font-size: 17px;
   line-height: 20px;
@@ -263,133 +254,5 @@ border: 0 !important;
 .listing_card_details {
   font-size: 14px;
 }
-@media (min-width: 375px) {
-  .listing_card_prices {
-    display: flex;
-    flex-direction: row;
-    line-height: 28px;
-  }
-  .listing_card_prices .listing_card_price {
-    line-height: initial;
-    font-size: 27px;
-  }
-  .listing_card_prices .listing_card_price_per_square_meter {
-    margin-top: 13px;
-  }
-  .listing_card_price_separator {
-    display: block;
-    font-size: 22px;
-    font-weight: 500;
-    margin: 0 5px;
-  }
-  .listing_card_title {
-    font-size: 19px;
-  }
-  .listing_card_details {
-    padding: 13px 18px;
-  }
-  .listing_card_location_names {
-    padding-bottom: 3px;
-  }
-}
-.my_profile .listing_card_location_names {
-  padding-bottom: 0;
-}
-.my_profile .listing_card_prices {
-  display: block;
-}
-.my_profile .listing_card_prices .listing_card_price {
-  font-size: 20px;
-  line-height: 1;
-  margin-bottom: 3px;
-}
-.my_profile .listing_card_prices .listing_card_price_per_square_meter {
-  margin-top: 0;
-}
-.my_profile .listing_card_price_separator {
-  display: none;
-}
-.my_profile .listing_card_title {
-  font-size: 17px;
-  line-height: 20px;
-}
-.my_profile .listing_card_details {
-  font-size: 14px;
-}
-.listing_card_compact {
-  border: 0;
-  flex-direction: row;
-  padding-right: 5px;
-  margin: 5px 0;
-}
-.listing_card_compact .listing_card_price_per_square_meter {
-  display: none;
-}
-.listing_card_compact .listing_card_images {
-  overflow: initial;
-}
-.listing_card_compact .listing_card_image {
-  height: 100px;
-  padding-right: 5px;
-  width: 100px;
-}
-.listing_card_compact .slick-arrow {
-  display: none;
-}
-.listing_card_compact .listing_card_tag {
-  color: white;
-  font-weight: 100;
-  font-size: 9px;
-  line-height: 9px;
-  padding: 4px;
-}
-.listing_card_compact .listing_card_info {
-  width: 150px;
-}
-.listing_card_compact .listing_card_title {
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 15.5px;
-  width: 100%;
-  flex: initial;
-}
-.listing_card_compact .listing_card_details {
-  border: 0;
-  color: #808080;
-  font-size: 11px;
-  font-weight: normal;
-  padding: 0;
-}
-.listing_card_compact .listing_card_details .fa {
-  display: none;
-}
-.listing_card_compact .listing_card_price {
-  font-size: 21px;
-  font-weight: bolder;
-  line-height: 24px;
-}
-.listing_card_compact_col:first-child {
-  margin-left: 5px;
-}
-.listing_card_compact_col + .listing_card_compact_col {
-  margin-left: 10px;
-}
-.listing_card_super_featured {
-  background-color: #ef6d6d;
-}
-.listing_card_super_featured .listing_card_details,
-.listing_card_super_featured .listing_card_details .vr,
-.listing_card_super_featured .listing_card_title {
-  color: white;
-}
-.listing_card_super_featured .listing_card_details {
-  border-top-color: white;
-}
-.listing_card_super_featured.listing_card_compact .listing_card_price {
-  color: white;
-}
-.listing_card_super_featured.hover,
-.listing_card_super_featured:hover {
-  text-decoration: none;
-  box-shadow: 0 0 0 0.3rem rgba(114, 42, 160, 0.25);
-}
+
+

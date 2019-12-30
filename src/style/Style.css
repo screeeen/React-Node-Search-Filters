@@ -13906,7 +13906,7 @@ form.amp-form-submit-success [type='submit'] {
     height: 400px;
   }
 }
-.listing_map_iframe {
+.listing_map {
   max-height: 400px;
   max-width: 640px;
 }
@@ -17009,6 +17009,7 @@ html[amp] .share_box {
   margin-top: 40px;
   text-align: center;
 }
+
 .switch_to_map__container {
   display: flex;
   justify-content: center;

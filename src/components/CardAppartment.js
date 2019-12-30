@@ -1,22 +1,28 @@
 import React, { Component } from 'react'
-// import '../style/Style.css'
+import { Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faBed, faBath } from '@fortawesome/free-solid-svg-icons'
+import MapContainer from './MapContainer'
 
 class CardApartment extends Component {
 
   render() {
-    const picURL = `https://picsum.photos/200/300/?random&t=` + new Date().getTime() +`)`;
-    
+    const picURL = `https://picsum.photos/200/300/?random&t=` + new Date().getTime() + `)`;
+
     return (
       <div className="listing_card_col">
         <div className="listing_card card">
           <img className="listing_card_image_container" src={picURL} alt="apartment pic" />
-          <div className="listing_card_location_names_and_prices pl-3">
-            <div className="listing_card_location_names">{this.props.location}</div>
-            <div className="listing_card_price" >{this.props.price}€</div>
-            <div className="listing_card_price_per_square_meter">{this.props.sqm}€/m²</div>
-          </div>
+          <Row>
+            <div className="listing_card_location_names_and_prices pl-3">
+              <div className="listing_card_location_names">{this.props.location}</div>
+              <div className="listing_card_price" >{this.props.price}€</div>
+              <div className="listing_card_price_per_square_meter">{this.props.sqm}€/m²</div>
+              <div className="listing_card_map" >
+                <MapContainer latitude={this.props.latitude} longitude={this.props.longitude} />
+              </div>
+            </div>
+          </Row>
         </div >
         <div className="listing_card_details">
           <FontAwesomeIcon icon={faCheck} />

@@ -20,6 +20,8 @@ class AppCanvas extends Component {
       sizeMin: 0,
       roomsNumber: 0,
       location: '',
+      latitude: 0,
+      longitude: 0,
       apartmentsResult: []
     }
   }

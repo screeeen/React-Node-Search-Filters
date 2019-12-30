@@ -5,7 +5,7 @@ class CardsContainer extends Component {
 
   displayApartmentsSearch = () => {
     return this.props.apartmentsToDisplay.slice(0).slice(0).reverse().map((oneApartment, i) => {
-      const { location,name, price, sqm, numberOfBedrooms, numberOfBathrooms } = oneApartment;
+      const { location,latitude, longitude,name, price, sqm, numberOfBedrooms, numberOfBathrooms } = oneApartment;
       return (
         <CardApartment
           key={i}
