@@ -76,30 +76,11 @@ border: 0 !important;
   width: 100%;
   margin-bottom: 20px;
 }
-.listing_card .slick-arrow {
-  top: 44.5%;
-  opacity: 0.75;
-}
-.listing_card .slick-arrow.slick-placeholder-button {
-  top: 45.3%;
-}
-.listing_card .slick-arrow:after {
-  font-size: 20px;
-}
-.listing_card .slick-prev {
-  cursor: w-resize;
-}
-.listing_card .slick-next {
-  cursor: e-resize;
-}
 .listing_card_image_container {
   height: 285px;
   position: relative;
 }
-.listing_card_images {
-  overflow: hidden;
-  position: relative;
-}
+
 .listing_card_image {
   height: 285px;
   -o-object-fit: cover;
@@ -171,6 +152,7 @@ border: 0 !important;
   position: absolute;
   width: 100%;
   z-index: 1;
+  padding-left: 10px;
 }
 .listing_card_location_names_and_prices {
   background-color: rgba(255, 255, 255, 0.6);

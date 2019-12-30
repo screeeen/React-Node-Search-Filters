@@ -12,9 +12,9 @@ class CardApartment extends Component {
       <div className="listing_card_col">
         <div className="listing_card card">
           <img className="listing_card_image_container" src={picURL} alt="apartment pic" />
-          <div className="listing_card_location_names_and_prices">
+          <div className="listing_card_location_names_and_prices pl-3">
             <div className="listing_card_location_names">{this.props.location}</div>
-            <div className="listing_card_location_price" >{this.props.price}€</div>
+            <div className="listing_card_price" >{this.props.price}€</div>
             <div className="listing_card_price_per_square_meter">{this.props.sqm}€/m²</div>
           </div>
         </div >
