@@ -70,7 +70,7 @@ class AppCanvas extends Component {
             <Col className="search_filter_col col-9">
               <FilterLocationField
                 location={this.state.location}
-                setLocation={(location) => this.setState({ location })} />
+                setLocation={(location,latitude,longitude) => this.setState({ location,latitude,longitude })} />
             </Col>
             {/* FILTERS COLLAPSABLE */}
             <Col className="col-2">

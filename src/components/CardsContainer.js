@@ -10,6 +10,8 @@ class CardsContainer extends Component {
         <CardApartment
           key={i}
           location={location}
+          latitude = {latitude}
+          longitude = {longitude}
           name={name}
           price={price}
           sqm={sqm}

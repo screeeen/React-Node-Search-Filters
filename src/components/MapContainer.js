@@ -1,25 +1,31 @@
 import React, { Component } from 'react'
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import '../style/Styles.css'
+// import axios from 'axios'
+
 class MapContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       latitude: this.props.latitude,
-      longitude: this.props.longitude
+      longitude: this.props.longitude,
+      location: this.props.location
     }
     console.log('map props', props);
-
   }
 
   render() {
+    const defaultMapOptions = {
+      fullscreenControl: false,
+    };
     return (
       <Map className="listing_card_map"
         google={this.props.google}
-        zoom={8}
-        initialCenter={{ lat: 47.444, lng: -122.176 }}
+        zoom={2}
+        initialCenter={{ lat: this.state.latitude, lng: this.state.longitude }}
+        fullscreenControl= {false}
       >
-        <Marker position={{ lat: 48.00, lng: -122.00 }} />
+        <Marker position={{ lat: this.state.latitude, lng: this.state.longitude }} />
       </Map>
     );
   }
