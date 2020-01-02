@@ -11,7 +11,6 @@ class MapContainer extends Component {
       longitude: this.props.longitude,
       location: this.props.location
     }
-    console.log('map props', props);
   }
 
   render() {
