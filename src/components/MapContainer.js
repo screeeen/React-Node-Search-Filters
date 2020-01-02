@@ -15,9 +15,6 @@ class MapContainer extends Component {
   }
 
   render() {
-    const defaultMapOptions = {
-      fullscreenControl: false,
-    };
     return (
       <Map className="listing_card_map"
         google={this.props.google}

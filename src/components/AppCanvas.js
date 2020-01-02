@@ -67,7 +67,7 @@ class AppCanvas extends Component {
         <div className="search_filters_container">
           <Row className="pt-2 pb-2 pl-3">
             {/* LOCATION */}
-            <Col className="search_filter_col col-9">
+            <Col className=" col-9">
               <FilterLocationField
                 location={this.state.location}
                 setLocation={(location,latitude,longitude) => this.setState({ location,latitude,longitude })} />
@@ -78,7 +78,6 @@ class AppCanvas extends Component {
                 showFilters={this.state.showFilters}
                 displayFilters={(showFilters) => this.setState({ showFilters })} />
             </Col>
-
           </Row>
         </div>
         {/* FILTERS */}

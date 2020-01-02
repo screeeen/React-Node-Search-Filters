@@ -1,5 +1,6 @@
-.search_filters_container > .row {
+.search_filters_container{
   background: #722aa0;
+  object-fit: contain;
 }
 
 .btn_custom {
@@ -19,6 +20,11 @@
 .btn_toggle:active{
   background: #1cc168 !important;
   color:white;
+}
+
+.header {
+  object-fit: contain;
+  width:100%;
 }
 
 
@@ -57,7 +63,7 @@ border: 0 !important;
 .listing_card_compact {
   width: 100%;
   border-radius: 0;
-  border: 1px solid #e3e3e3;
+  border:none;
   color: black;
   display: flex;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
