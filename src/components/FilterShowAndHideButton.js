@@ -8,7 +8,8 @@ import '../style/Styles.css'
 class FilterShowAndHideButton extends Component {
 
 
-  handleClick = () => {
+  handleClick = (e) => {
+    e.preventDefault();
     if (this.props.showFilters === true) {
       this.props.displayFilters(false)
     } else {

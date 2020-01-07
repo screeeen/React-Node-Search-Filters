@@ -43,7 +43,6 @@ class AppCanvas extends Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
     const query = {
       location: this.state.location,
       priceMax: this.state.priceMax,
@@ -69,8 +68,9 @@ class AppCanvas extends Component {
             {/* LOCATION */}
             <Col className=" col-9">
               <FilterLocationField
+                onSubmit={this.handleSubmit}
                 location={this.state.location}
-                setLocation={(location,latitude,longitude) => this.setState({ location,latitude,longitude })} />
+                setLocation={(location, latitude, longitude) => this.setState({ location, latitude, longitude })} />
             </Col>
             {/* FILTERS COLLAPSABLE */}
             <Col className="col-2">

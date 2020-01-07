@@ -2,12 +2,16 @@
 
 import axios from "axios";
 
+// Fallback solution
+function getBaseURL(){
+  return (process.env.NODE_ENV === 'development') ? 'http://localhost:5000' : process.env.REACT_APP_API_URL;
+}
 
 class Calls {
   constructor() {
     this.calls = axios.create({
-      baseURL: "http://localhost:5000",
-      // baseURL: process.env.REACT_APP_API_URL,
+       baseURL: getBaseURL(),
+      //baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
   }

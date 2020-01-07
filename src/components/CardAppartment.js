@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faBed, faBath } from '@fortawesome/free-solid-svg-icons'
-import MapContainer from './MapContainer'
+// import MapContainer from './MapContainer'
 
 class CardApartment extends Component {
 
@@ -19,7 +19,7 @@ class CardApartment extends Component {
               <div className="listing_card_price" >{this.props.price}€</div>
               <div className="listing_card_price_per_square_meter">{this.props.sqm}€/m²</div>
               <div className="listing_card_map" >
-                <MapContainer latitude={this.props.latitude} longitude={this.props.longitude} location ={this.props.location}/>
+                {/* <MapContainer latitude={this.props.latitude} longitude={this.props.longitude} location ={this.props.location}/> */}
               </div>
             </div>
           </Row>
